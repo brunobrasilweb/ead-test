@@ -1,0 +1,21 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sd="http://www.thymeleaf.org/spring-data" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<head>
+    <title>Cursos</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="thumbnails">
+
+        <div th:each="row : ${list}" class="box">
+            <a th:href="${row.video}" class="image fit" data-poptrox="youtube,800x400"><img th:src="${row.img}" alt="" /></a>
+            <div class="inner">
+                <h3 th:text="${row.name}"></h3>
+                <a th:href="${row.video}" class="button fit" data-poptrox="youtube,800x400">Assistir</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
